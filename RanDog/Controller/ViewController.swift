@@ -25,25 +25,19 @@ class ViewController: UIViewController {
                 let response = try decoder.decode(DogResponse.self, from: data)
                 
                 guard let imageUrl = URL(string: response.message) else { return }
-                
-                let imageTask = URLSession.shared.dataTask(with: imageUrl) { data, response, error in
-                    guard let data = data else { return }
-                    let image = UIImage(data: data)
-                    
-                    DispatchQueue.main.async {
-                        self.imageView.image = image
-                    }
-                }
-                imageTask.resume()
-                
+                DogApi.requestImage(url: imageUrl, completionHandler: self.completionHandler(image:error:))
             } catch {
                 print(error)
             }
-        
         }
         task.resume()
     }
-
+    
+    private func completionHandler(image: UIImage?, error: Error?){
+        DispatchQueue.main.async {
+            self.imageView.image = image
+        }
+    }
 
 }
 

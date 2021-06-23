@@ -20,11 +20,11 @@ class ViewController: UIViewController {
             guard let data = data else { return }
             print(data)
             
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                
-                let url = json["message"] as! String
-                print(url)
+            let decoder = JSONDecoder()
+            
+            do{
+                let response = try decoder.decode(DogResponse.self, from: data)
+                print(response)
             } catch {
                 print(error)
             }

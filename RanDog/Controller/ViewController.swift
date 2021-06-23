@@ -14,6 +14,34 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let randomImage = DogApi.Endpoint.randomImage.url
+        let task = URLSession.shared.dataTask(with: randomImage) { data, response, error in
+            guard let data = data else { return }
+            
+            let decoder = JSONDecoder()
+            
+            do{
+                let response = try decoder.decode(DogResponse.self, from: data)
+                
+                guard let imageUrl = URL(string: response.message) else { return }
+                
+                let imageTask = URLSession.shared.dataTask(with: imageUrl) { data, response, error in
+                    guard let data = data else { return }
+                    let image = UIImage(data: data)
+                    
+                    DispatchQueue.main.async {
+                        self.imageView.image = image
+                    }
+                }
+                imageTask.resume()
+                
+            } catch {
+                print(error)
+            }
+        
+        }
+        task.resume()
     }
 
 

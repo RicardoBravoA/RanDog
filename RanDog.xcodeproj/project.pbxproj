@@ -15,6 +15,7 @@
 		C60B890C26830F3000D1CA90 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60B890A26830F3000D1CA90 /* LaunchScreen.storyboard */; };
 		C60B8917268311CD00D1CA90 /* DogApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60B8916268311CD00D1CA90 /* DogApi.swift */; };
 		C60B89192683167E00D1CA90 /* DogResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60B89182683167E00D1CA90 /* DogResponse.swift */; };
+		C6B1250A2684597B005523C9 /* BreedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B125092684597B005523C9 /* BreedResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C60B890D26830F3000D1CA90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C60B8916268311CD00D1CA90 /* DogApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogApi.swift; sourceTree = "<group>"; };
 		C60B89182683167E00D1CA90 /* DogResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogResponse.swift; sourceTree = "<group>"; };
+		C6B125092684597B005523C9 /* BreedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				C60B8916268311CD00D1CA90 /* DogApi.swift */,
 				C60B89182683167E00D1CA90 /* DogResponse.swift */,
+				C6B125092684597B005523C9 /* BreedResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C60B890426830F2F00D1CA90 /* ViewController.swift in Sources */,
+				C6B1250A2684597B005523C9 /* BreedResponse.swift in Sources */,
 				C60B89192683167E00D1CA90 /* DogResponse.swift in Sources */,
 				C60B890026830F2F00D1CA90 /* AppDelegate.swift in Sources */,
 				C60B890226830F2F00D1CA90 /* SceneDelegate.swift in Sources */,
